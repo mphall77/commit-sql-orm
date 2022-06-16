@@ -15,6 +15,7 @@ const knx = knex({
 
 // TASK 1:
 // update this function to take a userId parameter and return only commits created by that user Id
+// SQL: SELECT * FROM commit;
 async function getCommits() {
     return await knx('commit').select('*');
 }
@@ -22,12 +23,14 @@ async function getCommits() {
 // TASK 2: 
 // Write a function that adds a new row to the commit table using knex with the provided input 
 // (assume input is in the correct format already)
+// SQL: INSERT INTO commit VALUES (...input)
 async function createCommit(input) {
     // write code here
 }
 
 // TASK 3:
 // Write a function that deletes a commit with the provided commitId
+// SQL: DELETE FROM commit WHERE id = commitId;
 async function deleteCommit(commitId) {
     // write code here
 }

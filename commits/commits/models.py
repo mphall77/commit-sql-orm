@@ -12,18 +12,22 @@ class Commit(models.Model):
 # Feel free to use https://docs.djangoproject.com/en/4.0/topics/db/models/ as a reference
 
 # Update this function to accept an optional parameter 'userId' - and return the commits created by that user
+# SQL: SELECT * FROM commit;
 def getCommits():
     return Commit.objects.all()
 
 # Complete this function so that it creates a new commit ()
+# SQL: INSERT INTO commit VALUES (message, userId)
 def createCommit(message, user):
     pass
 
 # Complete this function -- remove a commit based on the commit id
+# SQL: DELETE FROM commit WHERE id = commitId;
 def deleteCommit(id):
     pass
 
 # Complete this function -- return a User and all of their associated commits
+# Write a function that returns a User and all of their associated commits
 def getUserWithCommits(userId):
     pass
 
