@@ -18,8 +18,9 @@ def getCommits():
 
 # Complete this function so that it creates a new commit ()
 # SQL: INSERT INTO commit VALUES (message, userId)
-def createCommit(message, user):
-    pass
+def createCommit(m, u):
+    c = Commit(message = m, user = u)
+    c.save()
 
 # Complete this function -- remove a commit based on the commit id
 # SQL: DELETE FROM commit WHERE id = commitId;
