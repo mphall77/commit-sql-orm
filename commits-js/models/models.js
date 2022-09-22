@@ -25,14 +25,17 @@ async function getCommits() {
 // (assume input is in the correct format already)
 // SQL: INSERT INTO commit VALUES (...input)
 async function createCommit(input) {
-    // write code here
+    await knx('commit').insert(input).returning('*');
+//     knex.insert(input).returning('id').into('commit');
 }
 
 // TASK 3:
 // Write a function that deletes a commit with the provided commitId
 // SQL: DELETE FROM commit WHERE id = commitId;
 async function deleteCommit(commitId) {
-    // write code here
+    knex('commit')
+  .where('id' , commitId) // can also pass in a json object for multiple conditions
+  .del(['id']) //with the id arg -- adds the returning automatically
 }
 
 // TASK 4 -- Challenge:
